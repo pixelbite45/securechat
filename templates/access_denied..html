@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Access Denied</h1>
+<p>You have been blocked from this meeting.</p>
+<div>
+    <a href="{{ url_for('dashboard') }}">Dashboard</a> | 
+    <a href="{{ url_for('logout') }}">Logout</a>
+</div>
+{% endblock %}

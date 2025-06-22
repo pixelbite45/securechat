@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if message %}
+<h4> {{message}} </h4>
+
+{% endif %}
+<form method="post">
+    <label for="id_username">Session Id:</label>
+    <input type="text" id="id_username" name="session_id" required {% if meeting %} value="{{ meeting }}" {% endif %}
+required><br><br>
+    <label for="id_password">Passkey:</label>
+    <input type="password" id="id_password" name="passkey" required><br><br>
+    <button type="submit">Enter the Room</button>
+</form>
+
+{% endblock %}

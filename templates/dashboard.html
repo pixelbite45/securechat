@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 class="mb-0 me-2">{{ username }}</h3>
+<a href="{{ url_for('meeting_create') }}">Host a Session</a><br>
+<a href="{{ url_for('join_meeting') }}">Join a Session</a>
+
+<h5>Your Active Meetings</h5>
+
+{% for meeting_id, meeting_title in titles %}
+    <a href="{{ url_for('join_meeting') }}?meeting={{ meeting_id }}">
+        <strong>{{ meeting_id }}</strong>
+    </a>
+    <h6>{{ meeting_title or "No Title" }}</h6>
+    <br>
+{% endfor %}
+
+{% endblock %}
